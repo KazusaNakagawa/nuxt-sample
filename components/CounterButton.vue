@@ -1,15 +1,25 @@
 <template>
-  <v-btn class="mx-1" fab dark color="blue" @click="plus">
-    <v-icon dark> mdi-plus </v-icon>
+  <v-btn class="mx-1" fab dark :color="color" @click="click">
+    <v-icon dark> mdi-{{ kind }} </v-icon>
   </v-btn>
 </template>
 
 <script>
 export default {
-  // data: function() の略
+  props: {
+    kind: {
+      type: String,
+      default: 'plus',
+    },
+    color: {
+      type: String,
+      default: 'blue',
+    },
+  },
   methods: {
-    plus() {
-      this.count += 1
+    click() {
+      // 親コンポーネントの @click を呼び出す
+      this.$emit('click')
     },
   },
 }
