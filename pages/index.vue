@@ -7,10 +7,13 @@
     <v-btn class="mx-1" fab dark color="orange" @click="minus">
       <v-icon dark> mdi-minus </v-icon>
     </v-btn>
+    <counter-button />
   </div>
 </template>
 
 <script>
+import CounterButton from '@/components/CounterButton'
+
 export default {
   // data: function() の略
   data() {
@@ -25,6 +28,9 @@ export default {
     minus() {
       this.count -= 1
     },
+  },
+  components: {
+    CounterButton,
   },
 }
 </script>
