@@ -3,6 +3,12 @@
     <div class="number">{{ count }}</div>
     <counter-button kind="plus" color="blue" @click="plus" />
     <counter-button kind="minus" color="orange" @click="minus" />
+    <counter-button
+      kind="multiplication"
+      color="green"
+      @click="multiplication"
+    />
+    <counter-button kind="slash-forward" color="red" @click="division" />
   </div>
 </template>
 
@@ -25,6 +31,12 @@ export default {
     },
     minus() {
       this.count -= 1
+    },
+    multiplication() {
+      this.count *= 2
+    },
+    division() {
+      this.count /= 2
     },
   },
 }
