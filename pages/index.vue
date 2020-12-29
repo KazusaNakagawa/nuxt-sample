@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="number">{{ count }}</div>
+  <div :class="$style.container">
+    <div :class="$style.number">{{ count }}</div>
     <counter-button kind="plus" color="blue" @click="plus" />
     <counter-button kind="minus" color="orange" @click="minus" />
     <counter-button
@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 .container {
   .number {
     font-size: 32px;
