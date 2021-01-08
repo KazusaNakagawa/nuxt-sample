@@ -80,6 +80,16 @@ export default {
           title: 'Inspire',
           to: '/inspire',
         },
+        {
+          icon: '',
+          title: 'test',
+          to: '/test',
+        },
+        {
+          icon: '',
+          title: 'articles/10',
+          to: '/articles/10',
+        },
       ],
       miniVariant: false,
       right: true,
