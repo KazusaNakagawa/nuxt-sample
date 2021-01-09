@@ -22,15 +22,18 @@ export default {
       users: [],
     }
   },
-  created() {
-    console.log('created')
-
-    this.$axios
-      .get('http://jsonplaceholder.typicode.com/users')
-      .then((response) => {
-        // ここで debug response の値を確認して必要な要素を temolate で表示させる
-        this.users = response.data
-      })
+  async created() {
+    try {
+      // APIが返ってくるまで, await で待っていてくれる。
+      // 返ってきたAPIを response へ代入出来る
+      const response = await this.$axios.get(
+        'http://jsonplaceholder.typicode.com/users'
+      )
+      this.users = response.data
+    } catch (err) {
+      const res = err.response
+      alert(`${res.statusText} ${res.status}`)
+    }
   },
 
   mounted() {
