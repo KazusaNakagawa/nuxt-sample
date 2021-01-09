@@ -81,17 +81,17 @@ export default {
           to: '/inspire',
         },
         {
-          icon: '',
+          icon: 'Ts',
           title: 'test',
           to: '/test',
         },
         {
-          icon: '',
+          icon: 'Art',
           title: 'articles/10',
           to: '/articles/10',
         },
         {
-          icon: '',
+          icon: 'Li',
           title: 'lifecycle',
           to: '/lifecycle',
         },

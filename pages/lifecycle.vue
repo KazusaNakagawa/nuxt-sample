@@ -2,7 +2,7 @@
   <div>
     <div>ライフサイクル</div>
 
-    <v-text-field v-model="number" />
+    <v-text-field ref="number" v-model="number" />
     <div>数値: {{ number }}</div>
   </div>
 </template>
@@ -20,10 +20,14 @@ export default {
 
   mounted() {
     console.log('mounted')
+    // "vue 入力ホーム focus" のように検索すれば書き方は出てくるはず
+    this.$refs.number.focus()
   },
 
   updated() {
     console.log('updated')
+    // 変更されていることを確認出来る
+    console.log(this.number)
   },
 
   destroyed() {
