@@ -90,6 +90,11 @@ export default {
           title: 'articles/10',
           to: '/articles/10',
         },
+        {
+          icon: '',
+          title: 'lifecycle',
+          to: '/lifecycle',
+        },
       ],
       miniVariant: false,
       right: true,
