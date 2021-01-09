@@ -1,23 +1,26 @@
 <template>
   <div>
-    <!-- v-if 関係-->
+    <!-- v-if >> v-bind の方が, tampate内 スッキリできる -->
+    <h2 :class="$style.v_title">v-if</h2>
     <div v-if="score >= 80">よくできました！</div>
     <div v-else-if="score >= 30">もっといけるで！</div>
     <div v-else>がんばらんと！</div>
-    <hr />
 
-    <!-- <a :href="googleLink">Googleへのリンク</a> -->
+    <h2 :class="$style.v_title">v-link</h2>
+    <a :href="googleLink">Googleへのリンク</a>
 
     <!-- v-if で書くんじゃなくて, v-bind を積極的に使う事で template内がスッキリする -->
+    <h2 :class="$style.v_title">v-bind</h2>
     <img :src="imageUrl()" width="100px" />
-    <hr />
 
     <!-- @イベント名 -->
+    <h2 :class="$style.v_title">v-on</h2>
     <v-btn @click="showMessage('クリック')">クリック</v-btn>
     <v-btn @dblclick="showMessage('ダブルクリック')">ダブルクリック</v-btn>
     <v-btn @mouseenter="showMessage('マウスエンター')">マウスエンター</v-btn>
-    <hr />
+
     <!-- v-show で表示/非表示-->
+    <h2 :class="$style.v_title">v-show</h2>
     <div v-show="isShown">みえる??</div>
     <!-- v-btn vueで用意されているボタンなんかいい感じ -->
     <v-btn @click="toggleShown">表示/非表示の切り替え</v-btn>
@@ -53,3 +56,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" module>
+.v_title {
+  padding: 12px;
+}
+</style>
