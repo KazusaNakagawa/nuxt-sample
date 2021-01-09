@@ -11,6 +11,12 @@
     <!-- v-if で書くんじゃなくて, v-bind を積極的に使う事で template内がスッキリする -->
     <img :src="imageUrl()" width="100px" />
     <hr />
+
+    <!-- @イベント名 -->
+    <v-btn @click="showMessage('クリック')">クリック</v-btn>
+    <v-btn @dblclick="showMessage('ダブルクリック')">ダブルクリック</v-btn>
+    <v-btn @mouseenter="showMessage('マウスエンター')">マウスエンター</v-btn>
+    <hr />
     <!-- v-show で表示/非表示-->
     <div v-show="isShown">みえる??</div>
     <!-- v-btn vueで用意されているボタンなんかいい感じ -->
@@ -40,6 +46,9 @@ export default {
       } else {
         return 'https://2.bp.blogspot.com/-Bc8NTQ2PqY8/U0pTOuIDWQI/AAAAAAAAfGY/1RU2LKdozKs/s800/grade5_ganbarimasyou.png'
       }
+    },
+    showMessage(message) {
+      alert(`${message} !!!!!`)
     },
   },
 }
