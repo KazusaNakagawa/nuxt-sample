@@ -103,7 +103,7 @@ export default {
     }
   },
   computed: {
-    // 関数をpropatyに変換
+    // 関数をpropertyに変換
     sidebarVisible: {
       get() {
         return this.$store.state.layout.sidebarVisible
@@ -119,8 +119,7 @@ export default {
   },
   methods: {
     toggleSidebar() {
-      this.$store.state.layout.sidebarVisible = !this.$store.state.layout
-        .sidebarVisible
+      this.$store.dispatch('layout/toggleSidebar')
     },
   },
 }
