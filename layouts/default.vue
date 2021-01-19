@@ -103,8 +103,18 @@ export default {
     }
   },
   computed: {
-    sidebarVisible() {
-      return this.$store.state.layout.sidebarVisible
+    // 関数をpropatyに変換
+    sidebarVisible: {
+      get() {
+        return this.$store.state.layout.sidebarVisible
+      },
+      set(visible) {
+        console.log(`visibe: ${visible}`)
+        // drawer が閉じる時にstoreの値が変わるようにしてあげる必要がある
+        if (!visible) {
+          this.toggleSidebar()
+        }
+      },
     },
   },
   methods: {
