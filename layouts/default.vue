@@ -86,7 +86,7 @@ export default {
           to: '/test',
         },
         {
-          icon: 'Art',
+          icon: 'Ar',
           title: 'articles/10',
           to: '/articles/10',
         },
@@ -94,6 +94,11 @@ export default {
           icon: 'Li',
           title: 'lifecycle',
           to: '/lifecycle',
+        },
+        {
+          icon: 'Te',
+          title: 'test2',
+          to: '/test2',
         },
       ],
       miniVariant: false,
