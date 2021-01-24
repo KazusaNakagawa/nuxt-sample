@@ -1,19 +1,31 @@
 export const state = () => {
   return {
-    sidebarVisible: false,
+    users: [],
   }
 }
 
+export const getters = {}
+
 export const mutations = {
-  toggleSidebar(state) {
-    // state のsidebarVisible が呼ばれる
-    state.sidebarVisible = !state.sidebarVisible
+  setUsers(state, users) {
+    state.users = users
   },
 }
 
 export const actions = {
-  toggleSidebar({ commit }) {
-    // mutaitionsのtoggleSidebarが呼ばれる
-    commit('toggleSidebar')
+  async fetchUsers({ commit }) {
+    try {
+      const response = await this.$axios.get(
+        'http://jsonplaceholder.typicode.com/users'
+      )
+      // ここの2行の呼び出し方が今までと違う
+      // create() 直書きの時 >> this.users = response.data
+      const users = response.data
+      // mutaionsを呼び出している
+      commit('setUsers', users)
+    } catch (err) {
+      const res = err.response
+      alert(`${res.statusText} ${res.status}`)
+    }
   },
 }
