@@ -100,6 +100,11 @@ export default {
           title: 'test2',
           to: '/test2',
         },
+        {
+          icon: 'Ac',
+          title: 'Actions/Backend',
+          to: '/actions',
+        },
       ],
       miniVariant: false,
       right: true,
