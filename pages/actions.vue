@@ -13,21 +13,13 @@
 
 <script>
 export default {
-  data() {
-    return {
-      users: [],
-    }
+  computed: {
+    users() {
+      return this.$store.state.user.users
+    },
   },
   async created() {
-    try {
-      const response = await this.$axios.get(
-        'http://jsonplaceholder.typicode.com/users'
-      )
-      this.users = response.data
-    } catch (err) {
-      const res = err.response
-      alert(`${res.statusText} ${res.status}`)
-    }
+    await this.$store.dispatch('user/fetchUsers')
   },
 }
 </script>
