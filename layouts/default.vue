@@ -80,6 +80,31 @@ export default {
           title: 'Inspire',
           to: '/inspire',
         },
+        {
+          icon: 'Ts',
+          title: 'test',
+          to: '/test',
+        },
+        {
+          icon: 'Ar',
+          title: 'articles/10',
+          to: '/articles/10',
+        },
+        {
+          icon: 'Li',
+          title: 'lifecycle',
+          to: '/lifecycle',
+        },
+        {
+          icon: 'Te',
+          title: 'test2',
+          to: '/test2',
+        },
+        {
+          icon: 'Ac',
+          title: 'Actions/Backend',
+          to: '/actions',
+        },
       ],
       miniVariant: false,
       right: true,
